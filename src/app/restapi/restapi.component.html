@@ -1,0 +1,56 @@
+<style>
+    table {
+        border-collapse: separate;
+        border-spacing: 50px 0;
+    }
+
+    td {
+        padding: 10px 0;
+    }
+</style>
+<section>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">@</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+
+    <h2>News du jour</h2>
+
+    <table align="center">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let information of _informations">
+                <td>{{information.title}}</td>
+                <td>{{information.description}}</td>
+                <td>Source</td> 
+                <!-- Intégrer ci-dessus un lien à la source -->
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br>
+
+    <H2>Anecdotes</H2>
+    <table align="left">
+        <thead>
+            <tr>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let anecdote of _anecdotes">
+                <td>{{anecdote.description}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>
