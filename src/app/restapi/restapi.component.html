@@ -1,49 +1,39 @@
-<style>
-    table {
-        border-collapse: separate;
-        border-spacing: 50px 0;
-    }
+<h2>News du jour</h2>
+<table align="left">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let information of _informations">
+            <td>{{information.title}}</td>
+            <td>{{information.description}}</td>
+            <td>Source</td>
+            <!-- Intégrer ci-dessus un lien à la source -->
+        </tr>
+    </tbody>
+</table>
 
-    td {
-        padding: 10px 0;
-    }
-</style>
-<section>
+<br *ngIf="this.loginService.isAuth">
+<br *ngIf="this.loginService.isAuth">
+<br *ngIf="this.loginService.isAuth">
 
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">@</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
+<li *ngIf="this.loginService.isAuth" class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="text" placeholder="Mot-clé" aria-label="Search"
+        [(ngModel)]="wordSearched">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="onClickSearchWord()">Rechercher</button>
+</li>
 
-    <h2>News du jour</h2>
-
-    <table align="center">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>URL</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let information of _informations">
-                <td>{{information.title}}</td>
-                <td>{{information.description}}</td>
-                <td>Source</td> 
-                <!-- Intégrer ci-dessus un lien à la source -->
-            </tr>
-        </tbody>
-    </table>
-
-    <br><br>
-
+<br><br>
+<!-- <div *ngIf="isAuthInComponentRestApi"> -->
     <H2>Anecdotes</H2>
     <table align="left">
         <thead>
             <tr>
-                <th>Description</th>
+                <th>Mais saviez-vous que ... ?</th>
             </tr>
         </thead>
         <tbody>
@@ -53,4 +43,40 @@
         </tbody>
     </table>
 
-</section>
+    <br><br>
+
+    <H2>Anecdotes personnelles</H2>
+    <table align="left">
+        <thead>
+            <tr>
+                <th>...</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let anecdote of _anecdotes">
+                <td>{{anecdote.description}}</td>
+            </tr>
+        </tbody>
+    </table>
+<!-- </div> -->
+<br><br>
+
+<!-- <h2>User TEST</h2>
+    <table align="left">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Connexion Id</th>
+                <th>Preferences</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of _users">
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.connexionId}}</td>
+                <td>{{user.preferences}}</td>
+            </tr>
+        </tbody>
+    </table> -->

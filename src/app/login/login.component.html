@@ -1,1 +1,9 @@
-<p>Connexion fonctionne</p>
+<li *ngIf="this.loginService.isAuth == false" class="form-inline my-2 my-lg-0" size="300">
+    <input class="form-control mr-sm-2" type="search" placeholder="Connexion Id" aria-label="Search" [(ngModel)]="connexionIdFilled"><br>
+    <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Search" [(ngModel)]="passwordFilled"><br>
+    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)="onClickConnexion()">Connexion</button>
+</li>
+
+<table mat-table>
+    ...
+  </table>

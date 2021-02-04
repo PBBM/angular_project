@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<!-- <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Les Anecdotes du jour</a>
@@ -9,5 +9,72 @@
             <li routerLinkActive="active"><a routerLink="/register">Inscription</a></li>
             <li routerLinkActive="active"><a routerLink="/login">Connexion</a></li>
         </ul>
+    </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" href="#">Les Anecdotes du jour</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item active" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link" routerLink="/">Accueil <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item active" routerLinkActive="active">
+                <a class="nav-link" routerLink="/restapi">Appel REST</a>
+            </li>
+
+            <li class="nav-item active" routerLinkActive="active">
+                <a class="nav-link" routerLink="/register">Inscription</a>
+            </li>
+
+            <li class="nav-item active" routerLinkActive="active">
+                <a class="nav-link" routerLink="/login">My account</a>
+            </li>
+
+            <!-- Non utilisé pour l'instant -->
+            <li class="nav-item dropdown" routerLinkActive="active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Autre
+                </a>
+            <!-- ------------------------------ -->
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li> -->
+
+        </ul>
+
+        <!-- === Bouton rechercher ===
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Mot-clé" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+        </form> -->
+
+        <li *ngIf="this.loginService.isAuth == false" class="form-inline my-2 my-lg-0" size="300">
+            <input class="form-control mr-sm-2" type="search" placeholder="Connexion Id" aria-label="Search" [(ngModel)]="connexionIdFilled"><br>
+            <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Search" [(ngModel)]="passwordFilled"><br>
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)="onClickConnexion()">Connexion</button>
+        </li>
+        <li *ngIf="this.loginService.isAuth == true" class="form-inline my-2 my-lg-0" size="300">
+            <p>Bonjour {{ this.loginService.connexionId }} !</p>
+        </li>
+
     </div>
 </nav>

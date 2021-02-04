@@ -5,8 +5,11 @@
 export const environment = {
   production: false,
 
-    // url vers l'api développé en local
-    apiUrl: 'http://localhost:3007'
+  // url vers l'api NodeJS développé en local
+  apiNodejsUrl: 'http://localhost:3007',
+
+  // url vers l'api Spring développé en local
+  apiSpringUrl: 'http://localhost:9999'
 };
 
 /*
