@@ -39,6 +39,8 @@ export class RestapiComponent implements OnInit {
 
   _anecdotes: Anecdote[] = [];
 
+  _anecdotesByPreferences: Anecdote[] = [];
+
   _users: User[] = [];
 
   getInformations() {
