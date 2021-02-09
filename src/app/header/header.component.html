@@ -12,7 +12,7 @@
     </div>
 </nav> -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
     <a class="navbar-brand" href="#">Les Anecdotes du jour</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -68,12 +68,12 @@
         </form> -->
 
         <li *ngIf="this.loginService.isAuth == false" class="form-inline my-2 my-lg-0" size="300">
-            <input class="form-control mr-sm-2" type="search" placeholder="Connexion Id" aria-label="Search" [(ngModel)]="connexionIdFilled"><br>
-            <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Search" [(ngModel)]="passwordFilled"><br>
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)="onClickConnexion()">Connexion</button>
+            <input class="form-control mr-sm-2" type="search" placeholder="Identifiant de connexion" aria-label="Search" [(ngModel)]="connexionIdFilled"><br>
+            <input class="form-control mr-sm-2" type="password" placeholder="Mot de passe" aria-label="Search" [(ngModel)]="passwordFilled"><br>
+            <button type="button" class="btn btn-secondary" (click)="onClickConnexion()">Connexion</button>
         </li>
         <li *ngIf="this.loginService.isAuth == true" class="form-inline my-2 my-lg-0" size="300">
-            <p>Bonjour {{ this.loginService.connexionId }} !</p>
+            <p id="helloParagraph">Bonjour {{ this.loginService.connexionId }} !</p>
         </li>
 
     </div>

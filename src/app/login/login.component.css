@@ -1,0 +1,24 @@
+#divInformations {
+    width: 40%;
+    margin-left: 35px;
+}
+
+#myInformations {
+    size: 300;
+    margin-left: 130px;
+    font-size: 210%;
+}
+
+#divButton {
+    margin-left: 35px;
+    display: inline-block;
+}
+
+#connexionDiv {
+    margin-left: 35%;
+}
+
+#formTest {
+    margin-left: 45px;
+    margin-right: 45px;
+}

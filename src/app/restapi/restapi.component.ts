@@ -18,7 +18,7 @@ export class RestapiComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInformations();
-    // this.getAnecdotes();
+    this.getAnecdotes();
     // this.getUsers();
   }
   

@@ -17,8 +17,29 @@ export class LoginComponent implements OnInit {
 
   @Input() connexionIdFilled: string = '';
   @Input() passwordFilled: string = '';
+  @Input() connexionIdUpdated: string = '';
+  @Input() firstNameUpdated: string = '';
+  @Input() lastNameUpdated: string = '';
+  @Input() passwordUpdated: string = '';
+  @Input() preferencesUpdated: string = '';
+  @Input() emailUpdated: string = '';
+
+  isAuthInLoginComponent: boolean = false;
 
   _users: User[] = [];
+
+  onClickModifyButton() {
+    console.log(this.connexionIdUpdated);
+    console.log(this.firstNameUpdated);
+    console.log(this.lastNameUpdated);
+    console.log(this.passwordUpdated);
+    console.log(this.preferencesUpdated);
+    console.log(this.emailUpdated);
+  }
+
+  onClickDeleteButton() {
+
+  }
 
   onClickConnexion() {
     console.log("Tentative de connexion de la part de " +this.connexionIdFilled+ ", mot de passe : " +this.passwordFilled);
@@ -46,6 +67,7 @@ export class LoginComponent implements OnInit {
         this.loginService.preferences = user.preferences;
         console.log(this.loginService.preferences);
         console.log("Is authenticated : " + this.loginService.isAuth);
+        this.isAuthInLoginComponent = true;
         break;
       } else {
         console.log("Connexion failed");
